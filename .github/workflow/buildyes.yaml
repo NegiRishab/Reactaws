@@ -6,7 +6,7 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    runs-on: github
+    runs-on: ubuntu
     env: 
       BUCKET: newreactaws
       DIST: build
