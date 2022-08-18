@@ -1,4 +1,4 @@
----
+
 name: Build and Deploy React app
 on:
   push:
@@ -6,11 +6,11 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     env: 
       BUCKET: newreactaws
       DIST: build
-      REGION: Asia Pacific (Mumbai) ap-south-1
+      REGION: ap-south-1
       DIST_ID: E19OQ1VX5X1M0O
 
 
