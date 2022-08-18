@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runime-versions:
+      nodejs: 12
+    commands: 
+      -echo "installing dependencies"
+      -npm install
+      -npm install -g @react/cli@18.2.0
+    build:
+      commands:
+        -echo "building React project..."
+        -npm run build
+    post_build:
+      commands:
+        -echo"updating filses in s3 buckeys"
+        -aws s3 sync build/newreactaws/ s3://Rishahvh-demo-app-2022 --delete
