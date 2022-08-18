@@ -30,9 +30,7 @@ jobs:
     #     node-version: '14'
 
     - name: Install Dependencies
-      run: |
-      node --version
-      npm ci --production
+      run: npm install
 
     - name: Build Static Website
       run: npm run build
