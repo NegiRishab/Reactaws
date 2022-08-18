@@ -1,4 +1,4 @@
-
+---
 name: Build and Deploy React app
 on:
   push:
@@ -8,10 +8,10 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     env: 
-      BUCKET: newreactaws
+      BUCKET: rishabhelloworld
       DIST: build
-      REGION: ap-south-1
-      DIST_ID: E19OQ1VX5X1M0O
+      REGION: us-east-1
+      DIST_ID: EZO1OW4O90LCO
 
 
     steps:
@@ -25,15 +25,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.REGION }}
 
-     # - uses: actions/setup-node@v2
+    # - uses: actions/setup-node@v2
     #   with:
     #     node-version: '14'
 
-
-     - name: Install Dependencies
-       run: |
-        node --version
-        npm ci --production
+    - name: Install Dependencies
+      run: |
+      node --version
+      npm ci --production
 
     - name: Build Static Website
       run: npm run build
