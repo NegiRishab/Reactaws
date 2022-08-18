@@ -5,7 +5,7 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    runs-on: widndows-10
+    runs-on: ubuntu-latest
     env: 
       BUCKET: newreactaws
       DIST: build
